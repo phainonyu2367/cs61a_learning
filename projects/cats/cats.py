@@ -163,6 +163,18 @@ def report_progress(typed, prompt, user_id, send):
     """Send a report of your id and progress so far to the multiplayer server."""
     # BEGIN PROBLEM 8
     "*** YOUR CODE HERE ***"
+    totalLen = len(prompt)
+    mylen = 0
+
+    for i in range(min(len(typed), totalLen)):
+        if typed[i] != prompt[i]:
+            break
+        mylen += 1
+    
+    ratio = mylen / totalLen
+    send({'id':user_id, 'progress':ratio})
+
+    return ratio
     # END PROBLEM 8
 
 
