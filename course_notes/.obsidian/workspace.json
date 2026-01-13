@@ -1,0 +1,209 @@
+{
+  "main": {
+    "id": "26953bfd92c95ef0",
+    "type": "split",
+    "children": [
+      {
+        "id": "7126e6df0564a882",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c754d2281dfa18c9",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ce6ab24ddb935d53",
+    "type": "split",
+    "children": [
+      {
+        "id": "03dd7dc6cd02c4bc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7fdad45b20fa6ecc",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": true
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "676fdbea567fb8ea",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "50c708354813ee7e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "334431113f86c15e",
+    "type": "split",
+    "children": [
+      {
+        "id": "d28b96e384a4621b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "218fba4bef69ab7b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "l1 Chap1.2/1.2 Elements of Programming.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "1.2 Elements of Programming 的反向链接列表"
+            }
+          },
+          {
+            "id": "3d76fa810e5e1d9c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "l1 Chap1.2/1.2 Elements of Programming.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "1.2 Elements of Programming 的出链列表"
+            }
+          },
+          {
+            "id": "18cef375b356b898",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "a4a61b965669b458",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "l1 Chap1.2/1.2 Elements of Programming.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "1.2 Elements of Programming 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:新建数据库": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "7fdad45b20fa6ecc",
+  "lastOpenFiles": [
+    "Pasted image 20251219215755.png",
+    "未命名",
+    "Pasted image 20251219222119.png",
+    "conclution of lectures/Lecture12 Trees.md",
+    "conclution of lectures/Lecture12 Trees.pdf",
+    "conclution of lectures/Lecture11 Data Abstraction.md",
+    "conclution of lectures/Lecture11 Data Abstraction.pdf",
+    "conclution of lectures/Lecture10 containers.md",
+    "conclution of lectures/Lecture10 containers.pdf",
+    "conclution of lectures/Lecture9 tree recursion.md",
+    "conclution of lectures/Lecture9 tree recursion.pdf",
+    "conclution of lectures/Lecture8 recursion.md",
+    "conclution of lectures/Lecture8 recursion.pdf",
+    "conclution of lectures/Lecture6 design.md",
+    "conclution of lectures/Lecture6 design.pdf",
+    "conclution of lectures/Lecture 3.control.md",
+    "conclution of lectures/Lecture 3.control.pdf",
+    "conclution of lectures/Lecture7 Function Example.md",
+    "conclution of lectures/Lecture 2.Function.md",
+    "text_book_tutorial/l1 Chap1/1.3   Defining New Functions.md",
+    "text_book_tutorial/l1 Chap1/1.2 Elements of Programming.md",
+    "projects_log/project_1_log.md",
+    "projects_log/project_1_hog_tutorial.md",
+    "projects_log/project2 cats/descriptions_of_objects.md",
+    "projects_log/project2 cats",
+    "Pasted image 20251219221929.png",
+    "Pasted image 20251219221256.png",
+    "Pasted image 20251219220818.png",
+    "Pasted image 20251219220642.png",
+    "Pasted image 20251219220233.png",
+    "Pasted image 20251219220157.png",
+    "Pasted image 20251219215050.png",
+    "Pasted image 20251219214301.png",
+    "conclution of lectures/Lecture5 Environments.pdf",
+    "conclution of lectures/Lecture5 Environments.md",
+    "conclution of lectures/Lecture 4.Higher Functions.md",
+    "conclution of lectures/Lecture 1..md",
+    "欢迎.md"
+  ]
+}
