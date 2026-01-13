@@ -225,6 +225,30 @@ def fastest_words(game):
     word_indices = range(len(all_words(game)))    # contains an *index* for each word
     # BEGIN PROBLEM 10
     "*** YOUR CODE HERE ***"
+    fastestList = []
+
+    for playerIdx in player_indices:
+        #按顺序遍历玩家依次找出其对应的word
+        playerList = []
+
+        for wordIdx in word_indices:
+            #按顺序检查该玩家该词是否为最快
+            flag = True 
+            for i in player_indices:
+                if time(game, i, wordIdx) < time(game, playerIdx, wordIdx):
+                    flag = False
+                    break
+                if time(game, i, wordIdx) == time(game, playerIdx, wordIdx):
+                    if i < playerIdx: 
+                        flag = False
+                        break
+                    else: continue
+            if flag: playerList.append(word_at(game, wordIdx))
+
+        fastestList.append(playerList)
+
+    return fastestList
+
     # END PROBLEM 10
 
 
