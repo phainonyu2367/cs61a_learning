@@ -134,24 +134,19 @@ def shifty_shifts(start, goal, limit):
 
 def pawssible_patches(start, goal, limit):
     """A diff function that computes the edit distance from START to GOAL."""
-    assert False
-    if ______________: # Fill in the condition
-        # BEGIN
-        "*** YOUR CODE HERE ***"
-        # END
+    if start == goal: return 0
+    if limit < 0: return 1
+    if start == "" or goal == "":
+        if start == "": return len(goal)
+        else: return len(start)
+    if start[0] == goal[0]: return pawssible_patches(start[1:], goal[1:], limit)
+    return 1 + min(
+        pawssible_patches(start[1:], goal[1:], limit - 1),
+        pawssible_patches(start[1:], goal, limit - 1),
+        pawssible_patches(start, goal[1:], limit - 1)
+    )
 
-    elif ___________: # Feel free to remove or add additional cases
-        # BEGIN
-        "*** YOUR CODE HERE ***"
-        # END
 
-    else:
-        add_diff = ... # Fill in these lines
-        remove_diff = ...
-        substitute_diff = ...
-        # BEGIN
-        "*** YOUR CODE HERE ***"
-        # END
 
 
 def final_diff(start, goal, limit):
