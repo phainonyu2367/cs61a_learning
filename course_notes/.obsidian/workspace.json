@@ -11,10 +11,12 @@
             "id": "c754d2281dfa18c9",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
+              "type": "pdf",
+              "state": {
+                "file": "conclution of lectures/Lecture12 Trees.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Lecture12 Trees"
             }
           }
         ]
@@ -167,11 +169,22 @@
   },
   "active": "7fdad45b20fa6ecc",
   "lastOpenFiles": [
-    "Pasted image 20251219215755.png",
-    "未命名",
-    "Pasted image 20251219222119.png",
-    "conclution of lectures/Lecture12 Trees.md",
+    "conclution of lectures/Lecture 15.Mutable values.pdf",
+    "Pasted image 20260114105739.png",
+    "Pasted image 20260114105347.png",
+    "Pasted image 20260114105325.png",
+    "Pasted image 20260114105306.png",
+    "Pasted image 20260114100509.png",
+    "Pasted image 20260114100049.png",
+    "Pasted image 20260114095914.png",
+    "Pasted image 20260114094144.png",
+    "Pasted image 20260114093912.png",
+    "Pasted image 20260114093818.png",
     "conclution of lectures/Lecture12 Trees.pdf",
+    "conclution of lectures/Lecture 15.Mutable values.md",
+    "projects_log/project2 cats/descriptions_of_objects.md",
+    "未命名",
+    "conclution of lectures/Lecture12 Trees.md",
     "conclution of lectures/Lecture11 Data Abstraction.md",
     "conclution of lectures/Lecture11 Data Abstraction.pdf",
     "conclution of lectures/Lecture10 containers.md",
@@ -190,16 +203,7 @@
     "text_book_tutorial/l1 Chap1/1.2 Elements of Programming.md",
     "projects_log/project_1_log.md",
     "projects_log/project_1_hog_tutorial.md",
-    "projects_log/project2 cats/descriptions_of_objects.md",
     "projects_log/project2 cats",
-    "Pasted image 20251219221929.png",
-    "Pasted image 20251219221256.png",
-    "Pasted image 20251219220818.png",
-    "Pasted image 20251219220642.png",
-    "Pasted image 20251219220233.png",
-    "Pasted image 20251219220157.png",
-    "Pasted image 20251219215050.png",
-    "Pasted image 20251219214301.png",
     "conclution of lectures/Lecture5 Environments.pdf",
     "conclution of lectures/Lecture5 Environments.md",
     "conclution of lectures/Lecture 4.Higher Functions.md",

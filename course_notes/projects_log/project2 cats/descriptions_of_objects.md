@@ -81,3 +81,31 @@ There are three kinds of edit operations:
 1. Add a letter to `start`,
 2. Remove a letter from `start`,
 3. Substitute a letter in `start` for another.
+"""A diff function that computes the edit distance from START to GOAL."""
+
+it is implemented with tree recursion.
+
+## Phase3 multiplayer
+#### report_progress
+parameters:
+- typed: string list
+- prompt: string list
+- user_id: string
+- send: function
+
+
+#### time_per_word
+parameters:
+- times_per_player
+	- a list of lists for each player with timestamps indicating when each player finished typing each word
+- words
+	- a list of words
+
+return:
+- game
+	- a data abstraction that has a list of words and times 
+	- time are differences between consecutive timestamps
+
+game constructor:
+
+	Given timing data, return a game data abstraction, which contains a list of words and the amount of time each player took to type each word.
