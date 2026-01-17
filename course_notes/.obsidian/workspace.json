@@ -25,14 +25,26 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "conclution of lectures/Lecture 16.Trees.pdf"
+                "file": "conclution of lectures/Lecture 12.Trees.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "Lecture 16.Trees"
+              "title": "Lecture 12.Trees"
+            }
+          },
+          {
+            "id": "e6833c14c717eb2f",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "conclution of lectures/Lecture 15.Mutable values.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Lecture 15.Mutable values"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -180,22 +192,26 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "41994ef17ea345f0",
+  "active": "e6833c14c717eb2f",
   "lastOpenFiles": [
-    "conclution of lectures/Lecture 16.Mutable functions.pdf",
+    "conclution of lectures/Lecture 12.Trees.pdf",
+    "conclution of lectures/Lecture 10.containers.pdf",
+    "conclution of lectures/Lecture 11.Data Abstraction.pdf",
+    "conclution of lectures/Lecture 18. Object-Oriented-Programming.md",
+    "conclution of lectures/Lecture 18. Object-Oriented-Programming.pdf",
+    "Pasted image 20260117153715.png",
+    "Pasted image 20260117153523.png",
+    "Pasted image 20260117153022.png",
+    "Pasted image 20260117152854.png",
+    "Pasted image 20260117152651.png",
+    "Pasted image 20260117152258.png",
+    "Pasted image 20260117151957.png",
+    "Pasted image 20260117151732.png",
     "conclution of lectures/Lecture 15.Mutable values.pdf",
-    "conclution of lectures/Lecture 16.Trees.pdf",
+    "Pasted image 20260117151317.png",
+    "Pasted image 20260117151031.png",
     "conclution of lectures/Lecture 17.Iterators.pdf",
-    "Pasted image 20260115162942.png",
-    "Pasted image 20260115162616.png",
-    "Pasted image 20260115162216.png",
-    "Pasted image 20260115161527.png",
-    "Pasted image 20260115161257.png",
-    "Pasted image 20260115161148.png",
-    "Pasted image 20260115154612.png",
-    "Pasted image 20260115154241.png",
-    "Pasted image 20260115154219.png",
-    "Pasted image 20260115153929.png",
+    "conclution of lectures/Lecture 16.Mutable functions.pdf",
     "conclution of lectures/Lecture 16.Mutable functions.md",
     "conclution of lectures/Lecture 17.Iterators.md",
     "conclution of lectures/Lecture 15.Mutable values.md",
@@ -203,17 +219,13 @@
     "未命名",
     "conclution of lectures/Lecture12 Trees.md",
     "conclution of lectures/Lecture11 Data Abstraction.md",
-    "conclution of lectures/Lecture 11.Data Abstraction.pdf",
     "conclution of lectures/Lecture10 containers.md",
-    "conclution of lectures/Lecture 10.containers.pdf",
     "conclution of lectures/Lecture9 tree recursion.md",
     "conclution of lectures/Lecture 9.tree recursion.pdf",
     "conclution of lectures/Lecture8 recursion.md",
     "conclution of lectures/Lecture 8.recursion.pdf",
     "conclution of lectures/Lecture6 design.md",
-    "conclution of lectures/Lecture 6.design.pdf",
     "conclution of lectures/Lecture 3.control.md",
-    "conclution of lectures/Lecture 3.control.pdf",
     "conclution of lectures/Lecture7 Function Example.md",
     "conclution of lectures/Lecture 2.Function.md",
     "text_book_tutorial/l1 Chap1/1.3   Defining New Functions.md",
