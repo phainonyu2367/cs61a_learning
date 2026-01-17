@@ -35,12 +35,14 @@
             "id": "e6833c14c717eb2f",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "conclution of lectures/Lecture 15.Mutable values.pdf"
+                "file": "important_ideas_and_solutions/lab05.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "Lecture 15.Mutable values"
+              "icon": "lucide-file",
+              "title": "lab05"
             }
           }
         ],
@@ -194,6 +196,10 @@
   },
   "active": "e6833c14c717eb2f",
   "lastOpenFiles": [
+    "未命名.md",
+    "important_ideas_and_solutions/lab05.md",
+    "important_ideas_and_solutions",
+    "conclution of lectures/Lecture 15.Mutable values.pdf",
     "conclution of lectures/Lecture 12.Trees.pdf",
     "conclution of lectures/Lecture 10.containers.pdf",
     "conclution of lectures/Lecture 11.Data Abstraction.pdf",
@@ -207,7 +213,6 @@
     "Pasted image 20260117152258.png",
     "Pasted image 20260117151957.png",
     "Pasted image 20260117151732.png",
-    "conclution of lectures/Lecture 15.Mutable values.pdf",
     "Pasted image 20260117151317.png",
     "Pasted image 20260117151031.png",
     "conclution of lectures/Lecture 17.Iterators.pdf",
@@ -216,7 +221,6 @@
     "conclution of lectures/Lecture 17.Iterators.md",
     "conclution of lectures/Lecture 15.Mutable values.md",
     "projects_log/project2 cats/descriptions_of_objects.md",
-    "未命名",
     "conclution of lectures/Lecture12 Trees.md",
     "conclution of lectures/Lecture11 Data Abstraction.md",
     "conclution of lectures/Lecture10 containers.md",

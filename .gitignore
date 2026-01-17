@@ -1,2 +1,5 @@
-coursenotes/.obsidian
+course_notes/.obsidian
+
 *.zip
+
+./course_notes/important_ideas_and_solutions
