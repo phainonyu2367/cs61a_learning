@@ -37,12 +37,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "important_ideas_and_solutions/lab05.md",
+                "file": "important_ideas_and_solutions/things to do to learn better.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "lab05"
+              "title": "things to do to learn better"
             }
           }
         ],
@@ -196,8 +196,9 @@
   },
   "active": "e6833c14c717eb2f",
   "lastOpenFiles": [
-    "未命名.md",
     "important_ideas_and_solutions/lab05.md",
+    "important_ideas_and_solutions/things to do to learn better.md",
+    "未命名.md",
     "important_ideas_and_solutions",
     "conclution of lectures/Lecture 15.Mutable values.pdf",
     "conclution of lectures/Lecture 12.Trees.pdf",
