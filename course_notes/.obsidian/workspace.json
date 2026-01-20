@@ -42,9 +42,21 @@
               "icon": "lucide-file-text",
               "title": "Lecture 17.Iterators"
             }
+          },
+          {
+            "id": "21f46a89f152a2cc",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "conclution of lectures/Lecture 18. Object-Oriented-Programming.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Lecture 18. Object-Oriented-Programming"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -192,29 +204,30 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "e6833c14c717eb2f",
+  "active": "7fdad45b20fa6ecc",
   "lastOpenFiles": [
+    "conclution of lectures/Lecture19. inheritence.pdf",
+    "Pasted image 20260120164815.png",
+    "Pasted image 20260120164728.png",
+    "Pasted image 20260120163624.png",
+    "Pasted image 20260120163516.png",
+    "Pasted image 20260120163155.png",
+    "Pasted image 20260120162306.png",
+    "Pasted image 20260120162126.png",
     "conclution of lectures/Lecture 18. Object-Oriented-Programming.pdf",
+    "conclution of lectures/Lecture19. inheritence.md",
+    "Pasted image 20260120161620.png",
+    "Pasted image 20260120161352.png",
+    "Pasted image 20260120161222.png",
+    "conclution of lectures/Lecture 17.Iterators.pdf",
     "important_ideas_and_solutions/things to do to learn better.md",
     "important_ideas_and_solutions/lab05.md",
-    "未命名.md",
     "important_ideas_and_solutions",
     "conclution of lectures/Lecture 15.Mutable values.pdf",
     "conclution of lectures/Lecture 12.Trees.pdf",
     "conclution of lectures/Lecture 10.containers.pdf",
     "conclution of lectures/Lecture 11.Data Abstraction.pdf",
     "conclution of lectures/Lecture 18. Object-Oriented-Programming.md",
-    "Pasted image 20260117153715.png",
-    "Pasted image 20260117153523.png",
-    "Pasted image 20260117153022.png",
-    "Pasted image 20260117152854.png",
-    "Pasted image 20260117152651.png",
-    "Pasted image 20260117152258.png",
-    "Pasted image 20260117151957.png",
-    "Pasted image 20260117151732.png",
-    "Pasted image 20260117151317.png",
-    "Pasted image 20260117151031.png",
-    "conclution of lectures/Lecture 17.Iterators.pdf",
     "conclution of lectures/Lecture 16.Mutable functions.pdf",
     "conclution of lectures/Lecture 16.Mutable functions.md",
     "conclution of lectures/Lecture 17.Iterators.md",
