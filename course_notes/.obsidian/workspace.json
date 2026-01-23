@@ -47,12 +47,14 @@
             "id": "21f46a89f152a2cc",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "conclution of lectures/Lecture 18. Object-Oriented-Programming.pdf"
+                "file": "conclution of lectures/Lecture 21.Composition.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "Lecture 18. Object-Oriented-Programming"
+              "icon": "lucide-file",
+              "title": "Lecture 21.Composition"
             }
           }
         ],
@@ -204,21 +206,25 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "7fdad45b20fa6ecc",
+  "active": "21f46a89f152a2cc",
   "lastOpenFiles": [
+    "Pasted image 20260122104247.png",
+    "Pasted image 20260122092341.png",
+    "conclution of lectures/Lecture 20. Representation.md",
+    "conclution of lectures/Lecture 21.Composition.md",
+    "conclution of lectures/Lecture 20. Representation.pdf",
+    "Pasted image 20260122085927.png",
+    "Pasted image 20260122085906.png",
+    "Pasted image 20260122084925.png",
+    "Pasted image 20260122084000.png",
+    "Pasted image 20260121113108.png",
+    "Pasted image 20260121112949.png",
+    "Pasted image 20260121112752.png",
+    "Pasted image 20260121112600.png",
+    "conclution of lectures/Lecture 18. Object-Oriented-Programming.pdf",
     "conclution of lectures/Lecture19. inheritence.pdf",
     "Pasted image 20260120164815.png",
-    "Pasted image 20260120164728.png",
-    "Pasted image 20260120163624.png",
-    "Pasted image 20260120163516.png",
-    "Pasted image 20260120163155.png",
-    "Pasted image 20260120162306.png",
-    "Pasted image 20260120162126.png",
-    "conclution of lectures/Lecture 18. Object-Oriented-Programming.pdf",
     "conclution of lectures/Lecture19. inheritence.md",
-    "Pasted image 20260120161620.png",
-    "Pasted image 20260120161352.png",
-    "Pasted image 20260120161222.png",
     "conclution of lectures/Lecture 17.Iterators.pdf",
     "important_ideas_and_solutions/things to do to learn better.md",
     "important_ideas_and_solutions/lab05.md",
@@ -237,9 +243,7 @@
     "conclution of lectures/Lecture11 Data Abstraction.md",
     "conclution of lectures/Lecture10 containers.md",
     "conclution of lectures/Lecture9 tree recursion.md",
-    "conclution of lectures/Lecture 9.tree recursion.pdf",
     "conclution of lectures/Lecture8 recursion.md",
-    "conclution of lectures/Lecture 8.recursion.pdf",
     "conclution of lectures/Lecture6 design.md",
     "conclution of lectures/Lecture 3.control.md",
     "conclution of lectures/Lecture7 Function Example.md",
@@ -249,8 +253,6 @@
     "projects_log/project_1_log.md",
     "projects_log/project_1_hog_tutorial.md",
     "conclution of lectures/Lecture5 Environments.md",
-    "conclution of lectures/Lecture 4.Higher Functions.md",
-    "conclution of lectures/Lecture 1..md",
-    "欢迎.md"
+    "conclution of lectures/Lecture 4.Higher Functions.md"
   ]
 }
