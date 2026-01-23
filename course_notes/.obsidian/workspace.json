@@ -47,14 +47,12 @@
             "id": "21f46a89f152a2cc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "conclution of lectures/Lecture 21.Composition.md",
-                "mode": "source",
-                "source": false
+                "file": "conclution of lectures/Lecture 20. Representation.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Lecture 21.Composition"
+              "icon": "lucide-file-text",
+              "title": "Lecture 20. Representation"
             }
           }
         ],
@@ -208,10 +206,11 @@
   },
   "active": "21f46a89f152a2cc",
   "lastOpenFiles": [
+    "conclution of lectures/Lecture 21.Composition.pdf",
+    "conclution of lectures/Lecture 21.Composition.md",
     "Pasted image 20260122104247.png",
     "Pasted image 20260122092341.png",
     "conclution of lectures/Lecture 20. Representation.md",
-    "conclution of lectures/Lecture 21.Composition.md",
     "conclution of lectures/Lecture 20. Representation.pdf",
     "Pasted image 20260122085927.png",
     "Pasted image 20260122085906.png",
@@ -223,7 +222,6 @@
     "Pasted image 20260121112600.png",
     "conclution of lectures/Lecture 18. Object-Oriented-Programming.pdf",
     "conclution of lectures/Lecture19. inheritence.pdf",
-    "Pasted image 20260120164815.png",
     "conclution of lectures/Lecture19. inheritence.md",
     "conclution of lectures/Lecture 17.Iterators.pdf",
     "important_ideas_and_solutions/things to do to learn better.md",
@@ -234,7 +232,6 @@
     "conclution of lectures/Lecture 10.containers.pdf",
     "conclution of lectures/Lecture 11.Data Abstraction.pdf",
     "conclution of lectures/Lecture 18. Object-Oriented-Programming.md",
-    "conclution of lectures/Lecture 16.Mutable functions.pdf",
     "conclution of lectures/Lecture 16.Mutable functions.md",
     "conclution of lectures/Lecture 17.Iterators.md",
     "conclution of lectures/Lecture 15.Mutable values.md",
