@@ -49,10 +49,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "conclution of lectures/Lecture 20. Representation.pdf"
+                "file": "conclution of lectures/Lecture 20.Representation.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "Lecture 20. Representation"
+              "title": "Lecture 20.Representation"
             }
           }
         ],
@@ -204,24 +204,26 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "21f46a89f152a2cc",
+  "active": "7fdad45b20fa6ecc",
   "lastOpenFiles": [
+    "conclution of lectures/Lecture 23.Decomposition.pdf",
+    "Pasted image 20260123111354.png",
+    "Pasted image 20260123104504.png",
+    "Pasted image 20260123104119.png",
+    "Pasted image 20260123102503.png",
+    "Pasted image 20260123101710.png",
+    "conclution of lectures/Lecture 20.Representation.pdf",
+    "conclution of lectures/Lecture 23.Decomposition.md",
     "conclution of lectures/Lecture 21.Composition.pdf",
     "conclution of lectures/Lecture 21.Composition.md",
     "Pasted image 20260122104247.png",
     "Pasted image 20260122092341.png",
     "conclution of lectures/Lecture 20. Representation.md",
-    "conclution of lectures/Lecture 20. Representation.pdf",
     "Pasted image 20260122085927.png",
     "Pasted image 20260122085906.png",
     "Pasted image 20260122084925.png",
-    "Pasted image 20260122084000.png",
-    "Pasted image 20260121113108.png",
-    "Pasted image 20260121112949.png",
-    "Pasted image 20260121112752.png",
-    "Pasted image 20260121112600.png",
-    "conclution of lectures/Lecture 18. Object-Oriented-Programming.pdf",
-    "conclution of lectures/Lecture19. inheritence.pdf",
+    "conclution of lectures/Lecture 18.Object-Oriented-Programming.pdf",
+    "conclution of lectures/Lecture19.inheritence.pdf",
     "conclution of lectures/Lecture19. inheritence.md",
     "conclution of lectures/Lecture 17.Iterators.pdf",
     "important_ideas_and_solutions/things to do to learn better.md",
@@ -249,7 +251,6 @@
     "text_book_tutorial/l1 Chap1/1.2 Elements of Programming.md",
     "projects_log/project_1_log.md",
     "projects_log/project_1_hog_tutorial.md",
-    "conclution of lectures/Lecture5 Environments.md",
-    "conclution of lectures/Lecture 4.Higher Functions.md"
+    "conclution of lectures/Lecture5 Environments.md"
   ]
 }
