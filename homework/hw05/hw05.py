@@ -148,16 +148,22 @@ def store_digits(n):
     >>> print("Do not use str or reversed!") if any([r in cleaned for r in ["str", "reversed"]]) else None
     """
     "*** YOUR CODE HERE ***"
-    if n == 0:
-        return Link.empty
-    else:
-        count = 0
-        temp = n
-        while temp > 10:
-            temp //= 10
-            count += 1
-        n -= temp * 10**count 
-        return Link(temp, store_digits(n))
+    # if n == 0:
+    #     return Link.empty
+    # else:
+    #     count = 0
+    #     temp = n
+    #     while temp > 10:
+    #         temp //= 10
+    #         count += 1
+    #     n -= temp * 10**count 
+    #     return Link(temp, store_digits(n))
+    def helper(n, prev):
+        if n < 10:
+            return Link(n, prev)
+        return helper(n // 10, Link(n % 10, prev))
+
+    return helper(n, Link.empty)
 
 
 def is_bst(t):
