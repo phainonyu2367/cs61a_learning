@@ -5,11 +5,11 @@ test = {
     {
       'cases': [
         {
-          'answer': '8921294332adbef5e6db219b03adedf9',
+          'answer': 'The ThrowerAnt finds the nearest place including and in front of its own place that has Bees and throws at a random Bee in that place',
           'choices': [
             r"""
-            The ThrowerAnt finds the nearest place in front of its own place
-            that has Bees and throws at a random Bee in that place
+            The ThrowerAnt finds the nearest place including and in front of its
+            own place that has Bees and throws at a random Bee in that place
             """,
             r"""
             The ThrowerAnt finds the nearest place behind its own place
@@ -22,11 +22,12 @@ test = {
             'The ThrowerAnt throws at a random Bee in its own Place'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
+          'multiline': False,
           'question': 'What Bee should a ThrowerAnt throw at?'
         },
         {
-          'answer': '9bd9c23a391f841e8d9e4147c56659a7',
+          'answer': "The place's entrance instance attribute",
           'choices': [
             "The place's entrance instance attribute",
             "The place's exit instance attribute",
@@ -34,40 +35,44 @@ test = {
             'Decrement the place by 1'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
+          'multiline': False,
           'question': 'How do you get the Place object in front of another Place object?'
         },
         {
-          'answer': '2ca313dd416803bfaecbcf4a2d1851c1',
+          'answer': 'The Hive',
           'choices': [
             'The Hive',
             'None',
             'An empty Place'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
+          'multiline': False,
           'question': 'What is the entrance of the first Place in a tunnel (i.e. where do the bees enter from)?'
         },
         {
-          'answer': '1882785a9fe9c470b73929020d057fda',
+          'answer': 'by using the is_hive attribute of the place instance',
           'choices': [
-            'by calling the is_hive method on the place instance',
+            'by using the is_hive attribute of the place instance',
             'by checking the bees attribute of the place instance',
             'by checking the ant attribute of the place instance'
           ],
           'hidden': False,
-          'locked': True,
-          'question': 'How can you determine is a given Place is the Hive?'
+          'locked': False,
+          'multiline': False,
+          'question': 'How can you determine if a given Place is the Hive?'
         },
         {
-          'answer': '044ef3c0c6fd739b6260fe6f6cae71dd',
+          'answer': 'None',
           'choices': [
             'None',
             'A random Bee in the Hive',
             'The closest Bee behind the ThrowerAnt'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
+          'multiline': False,
           'question': 'What should nearest_bee return if there is no Bee in front of the ThrowerAnt in the tunnel?'
         }
       ],
@@ -81,33 +86,37 @@ test = {
           >>> # Testing nearest_bee
           >>> near_bee = Bee(2) # A Bee with 2 health
           >>> far_bee = Bee(3)  # A Bee with 3 health
+          >>> hive_bee = Bee(4) # A Bee with 4 health
+          >>> hive_place = gamestate.beehive
+          >>> hive_place.is_hive # Check if this place is the Hive
+          True
+          >>> hive_place.add_insect(hive_bee)
+          >>> thrower.nearest_bee() is hive_bee # Bees in the Hive can never be attacked
+          False
           >>> near_place = gamestate.places['tunnel_0_3']
           >>> far_place = gamestate.places['tunnel_0_6']
+          >>> near_place.is_hive # Check if this place is the Hive
+          False
           >>> near_place.add_insect(near_bee)
           >>> far_place.add_insect(far_bee)
-          >>> nearest_bee = thrower.nearest_bee(gamestate.beehive)
-          >>> thrower.nearest_bee(gamestate.beehive) is far_bee
-          03456a09f22295a39ca84d133a26f63d
-          # locked
-          >>> thrower.nearest_bee(gamestate.beehive) is near_bee
-          c7a88a0ffd3aef026b98eef6e7557da3
-          # locked
+          >>> nearest_bee = thrower.nearest_bee()
+          >>> nearest_bee is far_bee
+          False
+          >>> nearest_bee is near_bee
+          True
           >>> nearest_bee.health
-          20d533d3e06345c8bd7072212867f2d1
-          # locked
+          2
           >>> thrower.action(gamestate)    # Attack! ThrowerAnts do 1 damage
           >>> near_bee.health
-          d89cf7c79d5a479b0f636734143ed5e6
-          # locked
+          1
           >>> far_bee.health
-          81a7d27d1a4a958871bb97b545b871db
-          # locked
+          3
           >>> thrower.place is ant_place    # Don't change self.place!
-          c7a88a0ffd3aef026b98eef6e7557da3
-          # locked
+          True
           """,
           'hidden': False,
-          'locked': True
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -115,56 +124,60 @@ test = {
           >>> beehive = gamestate.beehive
           >>> bee = Bee(2)
           >>> beehive.add_insect(bee)      # Adding a bee to the beehive
-          >>> thrower.nearest_bee(beehive) is bee
+          >>> thrower.nearest_bee() is bee
           False
           >>> thrower.action(gamestate)    # Attempt to attack
           >>> bee.health                 # Bee health should not change
           2
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
           >>> # Test that ThrowerAnt attacks bees on its own square
           >>> near_bee = Bee(2)
           >>> ant_place.add_insect(near_bee)
-          >>> thrower.nearest_bee(gamestate.beehive) is near_bee
+          >>> thrower.nearest_bee() is near_bee
           True
           >>> thrower.action(gamestate)   # Attack!
           >>> near_bee.health           # should do 1 damage
           1
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
           >>> # Test that ThrowerAnt attacks bees at end of tunnel
           >>> near_bee = Bee(2)
           >>> gamestate.places["tunnel_0_8"].add_insect(near_bee)
-          >>> thrower.nearest_bee(gamestate.beehive) is near_bee
+          >>> thrower.nearest_bee() is near_bee
           True
           >>> thrower.action(gamestate)   # Attack!
           >>> near_bee.health           # should do 1 damage
           1
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
           >>> # Test that ThrowerAnt attacks bees 4 places away
           >>> near_bee = Bee(2)
           >>> gamestate.places["tunnel_0_4"].add_insect(near_bee)
-          >>> thrower.nearest_bee(gamestate.beehive) is near_bee
+          >>> thrower.nearest_bee() is near_bee
           True
           >>> thrower.action(gamestate)   # Attack!
           >>> near_bee.health           # should do 1 damage
           1
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -185,7 +198,8 @@ test = {
           True
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -194,7 +208,8 @@ test = {
           True
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         }
       ],
       'scored': True,
@@ -202,7 +217,7 @@ test = {
       >>> from ants import *
       >>> beehive, layout = Hive(AssaultPlan()), dry_layout
       >>> dimensions = (1, 9)
-      >>> gamestate = GameState(None, beehive, ant_types(), layout, dimensions)
+      >>> gamestate = GameState(beehive, ant_types(), layout, dimensions)
       >>> thrower = ThrowerAnt()
       >>> ant_place = gamestate.places["tunnel_0_0"]
       >>> ant_place.add_insect(thrower)

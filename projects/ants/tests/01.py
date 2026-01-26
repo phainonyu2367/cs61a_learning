@@ -5,7 +5,7 @@ test = {
     {
       'cases': [
         {
-          'answer': 'b11e19127a1cf83e285f83984cae6d4f',
+          'answer': "Placing an ant into the colony will decrease the colony's total available food by that ant's food_cost",
           'choices': [
             r"""
             Placing an ant into the colony will decrease the colony's total
@@ -21,11 +21,12 @@ test = {
             """
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
+          'multiline': False,
           'question': 'What is the purpose of the food_cost attribute?'
         },
         {
-          'answer': '2d3f4f6f9e9a083f23302e78084d5448',
+          'answer': 'class, all Ants of the same subclass cost the same to place',
           'choices': [
             'class, all Ants of the same subclass cost the same to place',
             'class, all Ants cost the same to place no matter what type of Ant it is',
@@ -33,7 +34,8 @@ test = {
             'instance, the food_cost of an Ant is randomized upon initialization'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
+          'multiline': False,
           'question': 'What type of attribute is food_cost?'
         }
       ],
@@ -45,41 +47,42 @@ test = {
         {
           'code': r"""
           >>> Ant.food_cost
-          73b94a1326ae2e803c3421016112207b
-          # locked
+          0
           >>> HarvesterAnt.food_cost
-          20d533d3e06345c8bd7072212867f2d1
-          # locked
+          2
           >>> ThrowerAnt.food_cost
-          81a7d27d1a4a958871bb97b545b871db
-          # locked
+          3
           """,
           'hidden': False,
-          'locked': True
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
           >>> # Testing HarvesterAnt action
-          >>> # Note that initializing an Ant here doesn't cost food, only
-          >>> # deploying an Ant in the game simulation does
-          >>> #
           >>> # Create a test layout where the colony is a single row with 9 tiles
           >>> beehive = Hive(make_test_assault_plan())
-          >>> gamestate = GameState(None, beehive, ant_types(), dry_layout, (1, 9))
+          >>> gamestate = GameState(beehive, ant_types(), dry_layout, (1, 9))
           >>> #
           >>> gamestate.food = 4
           >>> harvester = HarvesterAnt()
+          >>> # Note: initializing an Ant doesn't cost food,
+          >>> # only deploying an Ant in the game layout does.
+          >>> # For this test case, Ants can still take actions
+          >>> # without being deployed in the game layout.
+          >>> #
+          >>> gamestate.food
+          4
           >>> harvester.action(gamestate)
           >>> gamestate.food
-          62674984f877ec783f37e8b8b9c264d0
-          # locked
+          5
           >>> harvester.action(gamestate)
           >>> gamestate.food
-          50ae32be3e31df6c59633df7fdfb3a72
-          # locked
+          6
           """,
           'hidden': False,
-          'locked': True
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -88,7 +91,8 @@ test = {
           True
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         }
       ],
       'scored': True,

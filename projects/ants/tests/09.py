@@ -1,11 +1,11 @@
 test = {
   'name': 'Problem 9',
-  'points': 1,
+  'points': 2,
   'suites': [
     {
       'cases': [
         {
-          'answer': 'df9239b5516819d074706715cb1822fe',
+          'answer': 'A TankAnt does damage to all Bees in its place each turn',
           'choices': [
             'A TankAnt does damage to all Bees in its place each turn',
             'A TankAnt has greater health than a BodyguardAnt',
@@ -13,7 +13,8 @@ test = {
             'A TankAnt increases the damage of the ant it contains'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
+          'multiline': False,
           'question': r"""
           Besides costing more to place, what is the only difference between a
           TankAnt and a BodyguardAnt?
@@ -29,18 +30,16 @@ test = {
           'code': r"""
           >>> # Testing TankAnt parameters
           >>> TankAnt.food_cost
-          50ae32be3e31df6c59633df7fdfb3a72
-          # locked
+          6
           >>> TankAnt.damage
-          d89cf7c79d5a479b0f636734143ed5e6
-          # locked
+          1
           >>> tank = TankAnt()
           >>> tank.health
-          20d533d3e06345c8bd7072212867f2d1
-          # locked
+          2
           """,
           'hidden': False,
-          'locked': True
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -59,7 +58,8 @@ test = {
           [3]
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -78,7 +78,8 @@ test = {
           1
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         }
       ],
       'scored': True,
@@ -87,7 +88,7 @@ test = {
       >>> from ants import *
       >>> beehive, layout = Hive(make_test_assault_plan()), dry_layout
       >>> dimensions = (1, 9)
-      >>> gamestate = GameState(None, beehive, ant_types(), layout, dimensions)
+      >>> gamestate = GameState(beehive, ant_types(), layout, dimensions)
       >>> #
       """,
       'teardown': '',
@@ -101,14 +102,15 @@ test = {
           >>> tank = TankAnt()
           >>> place = gamestate.places['tunnel_0_1']
           >>> place.add_insect(tank)
-          >>> for _ in range(3):
+          >>> for _ in range(3):  # Add three bees with 1 health each
           ...     place.add_insect(Bee(1))
           >>> tank.action(gamestate)
-          >>> len(place.bees)
+          >>> len(place.bees)  # Bees removed from places because of TankAnt damage
           0
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -124,7 +126,8 @@ test = {
           0
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -146,7 +149,7 @@ test = {
           error!
           >>> place.ant is tank
           True
-          >>> tank.contained_ant is harvester
+          >>> tank.ant_contained is harvester
           True
           >>> try:
           ...   place.add_insect(HarvesterAnt())
@@ -155,11 +158,12 @@ test = {
           error!
           >>> place.ant is tank
           True
-          >>> tank.contained_ant is harvester
+          >>> tank.ant_contained is harvester
           True
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -181,7 +185,7 @@ test = {
           error!
           >>> place.ant is tank
           True
-          >>> tank.contained_ant is harvester
+          >>> tank.ant_contained is harvester
           True
           >>> try:
           ...   place.add_insect(HarvesterAnt())
@@ -190,11 +194,12 @@ test = {
           error!
           >>> place.ant is tank
           True
-          >>> tank.contained_ant is harvester
+          >>> tank.ant_contained is harvester
           True
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -205,7 +210,7 @@ test = {
           >>> place.add_insect(tank)
           >>> place.add_insect(test_ant)
           >>> place.remove_insect(test_ant)
-          >>> tank.contained_ant is None
+          >>> tank.ant_contained is None
           True
           >>> test_ant.place is None
           True
@@ -216,23 +221,25 @@ test = {
           True
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
           >>> tank = TankAnt()
           >>> place = Place('Test')
           >>> place.add_insect(tank)
-          >>> tank.action(gamestate) # Action without contained ant should not error
+          >>> tank.action(gamestate) # Action without ant_contained should not error
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
-          >>> # test proper call to death callback
-          >>> original_death_callback = Insect.death_callback
-          >>> Insect.death_callback = lambda x: print("insect died")
+          >>> # test proper call to zero-health callback
+          >>> original_zero_health_callback = Insect.zero_health_callback
+          >>> Insect.zero_health_callback = lambda x: print("insect died")
           >>> place = gamestate.places["tunnel_0_0"]
           >>> bee = Bee(3)
           >>> tank = TankAnt()
@@ -245,10 +252,11 @@ test = {
           insect died
           >>> bee.action(gamestate) # if you fail this test you probably didn't correctly call Ant.reduce_health or Insect.reduce_health
           insect died
-          >>> Insect.death_callback = original_death_callback
+          >>> Insect.zero_health_callback = original_zero_health_callback
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         }
       ],
       'scored': True,
@@ -257,7 +265,7 @@ test = {
       >>> from ants import *
       >>> beehive, layout = Hive(make_test_assault_plan()), dry_layout
       >>> dimensions = (1, 9)
-      >>> gamestate = GameState(None, beehive, ant_types(), layout, dimensions)
+      >>> gamestate = GameState(beehive, ant_types(), layout, dimensions)
       >>> #
       """,
       'teardown': '',
@@ -272,7 +280,8 @@ test = {
           True
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -286,7 +295,8 @@ test = {
           >>> tank = TankAnt()
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         }
       ],
       'scored': True,

@@ -1,11 +1,11 @@
 test = {
   'name': 'Problem 6',
-  'points': 2,
+  'points': 1,
   'suites': [
     {
       'cases': [
         {
-          'answer': '64cb170acd2b167609e6df7dd048fd96',
+          'answer': 'Ant',
           'choices': [
             'Ant',
             'ThrowerAnt',
@@ -13,11 +13,12 @@ test = {
             'The WallAnt class does not inherit from any class'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
+          'multiline': False,
           'question': 'What class does WallAnt inherit from?'
         },
         {
-          'answer': '342b4efa1ef6de0defc39dc4fbf1ebf1',
+          'answer': 'A WallAnt takes no action each turn',
           'choices': [
             'A WallAnt takes no action each turn',
             'A WallAnt increases its own health by 1 each turn',
@@ -25,22 +26,24 @@ test = {
             'A WallAnt attacks all the Bees in its place each turn'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
+          'multiline': False,
           'question': "What is a WallAnt's action?"
         },
         {
-          'answer': '50be1539e31a90ea01dbc6bf87f83b9f',
+          'answer': 'Ant subclasses inherit the action method from the Insect class',
           'choices': [
             'Ant subclasses inherit the action method from the Insect class',
             'Ant subclasses inherit the action method from the Ant class',
             'Ant subclasses do not inherit the action method from any class'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
+          'multiline': False,
           'question': 'Where do Ant subclasses inherit the action method from?'
         },
         {
-          'answer': 'c3962b43bab9946b4984107f5e53e9e7',
+          'answer': 'Nothing',
           'choices': [
             'Nothing',
             'Throw a leaf at the nearest Bee',
@@ -48,7 +51,8 @@ test = {
             'Reduce the health of all Bees in its place'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
+          'multiline': False,
           'question': r"""
           If a subclass of Ant does not override the action method, what is the
           default action?
@@ -65,21 +69,18 @@ test = {
           >>> # Testing WallAnt parameters
           >>> wall = WallAnt()
           >>> wall.name
-          b344415ec12ae63ab2f69b87a119dba6
-          # locked
+          'Wall'
           >>> wall.health
-          c9452203eb0b0f0bd2454586a6c2fc5c
-          # locked
+          4
           >>> # `health` should not be a class attribute
           >>> not hasattr(WallAnt, 'health') # hasattr checks if the WallAnt class has a class attribute called 'health'
-          c7a88a0ffd3aef026b98eef6e7557da3
-          # locked
+          True
           >>> WallAnt.food_cost
-          c9452203eb0b0f0bd2454586a6c2fc5c
-          # locked
+          4
           """,
           'hidden': False,
-          'locked': True
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -92,13 +93,14 @@ test = {
           >>> wall = WallAnt()
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
           >>> # Testing WallAnt holds strong
           >>> beehive, layout = Hive(AssaultPlan()), dry_layout
-          >>> gamestate = GameState(None, beehive, ant_types(), layout, (1, 9))
+          >>> gamestate = GameState(beehive, ant_types(), layout, (1, 9))
           >>> place = gamestate.places['tunnel_0_4']
           >>> wall = WallAnt()
           >>> bee = Bee(1000)
@@ -117,7 +119,8 @@ test = {
           True
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         }
       ],
       'scored': True,
@@ -136,7 +139,8 @@ test = {
           True
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         }
       ],
       'scored': True,

@@ -5,7 +5,7 @@ test = {
     {
       'cases': [
         {
-          'answer': '9b8f7869c0cf94ceb6a862dc352b4df1',
+          'answer': 'By accessing the place instance attribute, which is a Place object',
           'choices': [
             'By accessing the place instance attribute, which is a Place object',
             r"""
@@ -16,11 +16,12 @@ test = {
             'By calling the FireAnt constructor'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
+          'multiline': False,
           'question': 'How can you obtain the current place of a FireAnt?'
         },
         {
-          'answer': '81e2e777eb97c4cb836bdcb2fbb428d6',
+          'answer': 'By accessing the bees instance attribute, which is a list of Bee objects',
           'choices': [
             r"""
             By accessing the bees instance attribute, which is a list of Bee
@@ -34,11 +35,12 @@ test = {
             'By calling the Bee constructor, passing in the place instance'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
+          'multiline': False,
           'question': 'How can you obtain all of the Bees currently in a given place?'
         },
         {
-          'answer': 'c95a4e74584be420b1318afb809bb642',
+          'answer': 'Yes, but you should iterate over a copy of the list to avoid skipping elements',
           'choices': [
             r"""
             Yes, but you should iterate over a copy of the list to avoid skipping
@@ -51,7 +53,8 @@ test = {
             """
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
+          'multiline': False,
           'question': 'Can you iterate over a list while mutating it?'
         }
       ],
@@ -65,14 +68,13 @@ test = {
           >>> # Testing FireAnt parameters
           >>> fire = FireAnt()
           >>> FireAnt.food_cost
-          62674984f877ec783f37e8b8b9c264d0
-          # locked
+          5
           >>> fire.health
-          81a7d27d1a4a958871bb97b545b871db
-          # locked
+          3
           """,
           'hidden': False,
-          'locked': True
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -92,7 +94,8 @@ test = {
           >>> Ant.reduce_health = original
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -103,40 +106,35 @@ test = {
           >>> place.add_insect(Bee(3))      # Add a Bee with 3 health
           >>> place.add_insect(Bee(5))      # Add a Bee with 5 health
           >>> len(place.bees)               # How many bees are there?
-          20d533d3e06345c8bd7072212867f2d1
-          # locked
+          2
           >>> place.bees[0].action(gamestate)  # The first Bee attacks FireAnt
           >>> fire.health
-          73b94a1326ae2e803c3421016112207b
-          # locked
+          0
           >>> fire.place is None
-          c7a88a0ffd3aef026b98eef6e7557da3
-          # locked
+          True
           >>> len(place.bees)               # How many bees are left?
-          d89cf7c79d5a479b0f636734143ed5e6
-          # locked
+          1
           >>> place.bees[0].health           # What is the health of the remaining Bee?
-          d89cf7c79d5a479b0f636734143ed5e6
-          # locked
+          1
           """,
           'hidden': False,
-          'locked': True
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
           >>> place = gamestate.places['tunnel_0_4']
-          >>> ant = FireAnt(1)           # Create a FireAnt with 1 health
+          >>> ant = FireAnt(health=1)           # Create a FireAnt with 1 health
           >>> place.add_insect(ant)      # Add a FireAnt to place
           >>> ant.place is place
-          c7a88a0ffd3aef026b98eef6e7557da3
-          # locked
+          True
           >>> place.remove_insect(ant)   # Remove FireAnt from place
           >>> ant.place is place         # Is the ant's place still that place?
-          03456a09f22295a39ca84d133a26f63d
-          # locked
+          False
           """,
           'hidden': False,
-          'locked': True
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -153,7 +151,8 @@ test = {
           4
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -171,7 +170,8 @@ test = {
           50
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -188,7 +188,8 @@ test = {
           1
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -202,7 +203,8 @@ test = {
           0
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -218,7 +220,8 @@ test = {
           399
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -242,7 +245,8 @@ test = {
           'tunnel_0_3'
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -261,13 +265,14 @@ test = {
           True
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
-          >>> # test proper call to death callback
-          >>> original_death_callback = Insect.death_callback
-          >>> Insect.death_callback = lambda x: print("insect died")
+          >>> # test proper call to zero-health callback
+          >>> original_zero_health_callback = Insect.zero_health_callback
+          >>> Insect.zero_health_callback = lambda x: print("insect died")
           >>> place = gamestate.places["tunnel_0_0"]
           >>> bee = Bee(3)
           >>> ant = FireAnt()
@@ -278,10 +283,11 @@ test = {
           >>> bee.action(gamestate) # if you fail this test you probably didn't correctly call Ant.reduce_health or Insect.reduce_health
           insect died
           insect died
-          >>> Insect.death_callback = original_death_callback
+          >>> Insect.zero_health_callback = original_zero_health_callback
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         }
       ],
       'scored': True,
@@ -289,7 +295,7 @@ test = {
       >>> from ants import *
       >>> beehive, layout = Hive(AssaultPlan()), dry_layout
       >>> dimensions = (1, 9)
-      >>> gamestate = GameState(None, beehive, ant_types(), layout, dimensions)
+      >>> gamestate = GameState(beehive, ant_types(), layout, dimensions)
       >>> #
       """,
       'teardown': '',
@@ -304,7 +310,8 @@ test = {
           True
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         }
       ],
       'scored': True,

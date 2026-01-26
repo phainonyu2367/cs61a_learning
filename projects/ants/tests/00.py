@@ -22,6 +22,7 @@ test = {
           ],
           'hidden': False,
           'locked': True,
+          'multiline': False,
           'question': r"""
           What is the significance of an Insect's health attribute? Does this
           value change? If so, how?
@@ -37,6 +38,7 @@ test = {
           ],
           'hidden': False,
           'locked': True,
+          'multiline': False,
           'question': 'Which of the following is a class attribute of the Insect class?'
         },
         {
@@ -49,6 +51,7 @@ test = {
           ],
           'hidden': False,
           'locked': True,
+          'multiline': False,
           'question': 'Is the health attribute of the Ant class an instance attribute or class attribute? Why?'
         },
         {
@@ -61,6 +64,7 @@ test = {
           ],
           'hidden': False,
           'locked': True,
+          'multiline': False,
           'question': r"""
           Is the damage attribute of an Ant subclass (such as ThrowerAnt) an
           instance or class attribute? Why?
@@ -76,6 +80,7 @@ test = {
           ],
           'hidden': False,
           'locked': True,
+          'multiline': False,
           'question': 'Which class do both Ant and Bee inherit from?'
         },
         {
@@ -94,6 +99,7 @@ test = {
           ],
           'hidden': False,
           'locked': True,
+          'multiline': False,
           'question': 'What do instances of Ant and instances of Bee have in common? Please choose the most correct answer.'
         },
         {
@@ -106,6 +112,7 @@ test = {
           ],
           'hidden': False,
           'locked': True,
+          'multiline': False,
           'question': r"""
           How many insects can be in a single Place at any given time in the
           game (before Problem 8)?
@@ -121,6 +128,7 @@ test = {
           ],
           'hidden': False,
           'locked': True,
+          'multiline': False,
           'question': 'What does a Bee do during one of its turns?'
         },
         {
@@ -134,6 +142,7 @@ test = {
           ],
           'hidden': False,
           'locked': True,
+          'multiline': False,
           'question': 'When is the game lost?'
         }
       ],

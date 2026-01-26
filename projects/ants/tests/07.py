@@ -5,7 +5,7 @@ test = {
     {
       'cases': [
         {
-          'answer': '9bdaf9d21c5bc25bc5b465def43443fc',
+          'answer': 'instance, each HungryAnt instance chews independently of other HungryAnt instances',
           'choices': [
             r"""
             instance, each HungryAnt instance chews independently of other
@@ -19,23 +19,25 @@ test = {
             'class, all HungryAnt instances in the game chew simultaneously'
           ],
           'hidden': False,
-          'locked': True,
-          'question': 'Should chewing be an instance or class attribute? Why?'
+          'locked': False,
+          'multiline': False,
+          'question': 'Should turns_to_chew be an instance or class attribute? Why?'
         },
         {
-          'answer': '23bd482fec0fa90b0d41df758f1a941e',
+          'answer': 'When it is not chewing, i.e. when its turns_to_chew attribute is 0',
           'choices': [
-            'When it is not chewing, i.e. when its chewing attribute is 0',
-            'When it is chewing, i.e. when its chewing attribute is at least 1',
+            'When it is not chewing, i.e. when its turns_to_chew attribute is 0',
+            'When it is chewing, i.e. when its turns_to_chew attribute is at least 1',
             'Each turn',
             'Whenever a Bee is in its place'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
+          'multiline': False,
           'question': 'When is a HungryAnt able to eat a Bee?'
         },
         {
-          'answer': '30589d40710d13dfd27efd5cdd28c0f0',
+          'answer': 'A random Bee in the same place as itself',
           'choices': [
             'A random Bee in the same place as itself',
             'The closest Bee in front of it',
@@ -43,7 +45,8 @@ test = {
             'The closest Bee in either direction'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
+          'multiline': False,
           'question': 'When a HungryAnt is able to eat, which Bee does it eat?'
         }
       ],
@@ -57,34 +60,38 @@ test = {
           >>> # Testing HungryAnt parameters
           >>> hungry = HungryAnt()
           >>> HungryAnt.food_cost
-          c9452203eb0b0f0bd2454586a6c2fc5c
-          # locked
+          4
           >>> hungry.health
-          d89cf7c79d5a479b0f636734143ed5e6
-          # locked
+          1
+          >>> hungry.chewing_turns
+          3
+          >>> hungry.turns_to_chew
+          0
           """,
           'hidden': False,
-          'locked': True
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
           >>> # Abstraction tests
           >>> original = Ant.__init__
-          >>> Ant.__init__ = lambda self, health: print("init") #If this errors, you are not calling the parent constructor correctly.
+          >>> Ant.__init__ = lambda self, health: print("init")  # If this errors, you are not calling the parent constructor correctly.
           >>> hungry = HungryAnt()
           init
           >>> Ant.__init__ = original
           >>> hungry = HungryAnt()
           >>> # Class vs Instance attributes
-          >>> not hasattr(HungryAnt, 'chewing')
-          True
-          >>> hungry.chewing
+          >>> hasattr(HungryAnt, 'turns_to_chew')  # turns_to_chew should be an instance attribute
+          False
+          >>> hungry.turns_to_chew  # HungryAnt is ready to eat a bee
           0
-          >>> HungryAnt.chew_duration
+          >>> HungryAnt.chewing_turns
           3
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -96,22 +103,45 @@ test = {
           >>> place.add_insect(bee1)         # Add the Bee to the same place as HungryAnt
           >>> hungry.action(gamestate)
           >>> bee1.health
-          73b94a1326ae2e803c3421016112207b
-          # locked
+          0
           >>> bee2 = Bee(1)                 # A Bee with 1 health
           >>> place.add_insect(bee2)
           >>> for _ in range(3):
           ...     hungry.action(gamestate)     # Digesting...not eating
           >>> bee2.health
-          d89cf7c79d5a479b0f636734143ed5e6
-          # locked
+          1
           >>> hungry.action(gamestate)
           >>> bee2.health
-          73b94a1326ae2e803c3421016112207b
-          # locked
+          0
           """,
           'hidden': False,
-          'locked': True
+          'locked': False,
+          'multiline': False
+        },
+        {
+          'code': r"""
+          >>> # Testing HungryAnt eats and chews for allotted time
+          >>> hungry = HungryAnt()
+          >>> bee1 = Bee(1000)              # A Bee with 1000 health
+          >>> place = gamestate.places["tunnel_0_0"]
+          >>> place.add_insect(hungry)
+          >>> place.add_insect(bee1)         # Add the Bee to the same place as HungryAnt
+          >>> hungry.action(gamestate)
+          >>> bee1.health
+          0
+          >>> bee2 = Bee(1)                 # A Bee with 1 health
+          >>> place.add_insect(bee2)
+          >>> for _ in range(2):
+          ...     hungry.action(gamestate)     # Digesting...not eating, should not finish eating!
+          >>> bee2.health
+          1
+          >>> hungry.action(gamestate)
+          >>> bee2.health
+          1
+          """,
+          'hidden': False,
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -134,7 +164,8 @@ test = {
           0
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -161,13 +192,14 @@ test = {
           0
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
           >>> # Testing HungryAnt chew duration looked up on instance
           >>> very_hungry = HungryAnt()  # Add very hungry caterpi- um, ant
-          >>> HungryAnt.chew_duration = 0
+          >>> HungryAnt.chewing_turns = 0
           >>> place = gamestate.places["tunnel_0_0"]
           >>> place.add_insect(very_hungry)
           >>> for _ in range(100):
@@ -178,7 +210,8 @@ test = {
           0
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -199,7 +232,8 @@ test = {
           1
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -212,13 +246,14 @@ test = {
           1
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
-          >>> # test proper call to death callback
-          >>> original_death_callback = Insect.death_callback
-          >>> Insect.death_callback = lambda x: print("insect died")
+          >>> # test proper call to zero-health callback
+          >>> original_zero_health_callback = Insect.zero_health_callback
+          >>> Insect.zero_health_callback = lambda x: print("insect died")
           >>> ant = HungryAnt()
           >>> bee = Bee(1000)              # A Bee with 1000 health
           >>> place = gamestate.places["tunnel_0_0"]
@@ -226,10 +261,11 @@ test = {
           >>> place.add_insect(ant)
           >>> ant.action(gamestate) # if you fail this test you probably didn't correctly call Ant.reduce_health or Insect.reduce_health
           insect died
-          >>> Insect.death_callback = original_death_callback
+          >>> Insect.zero_health_callback = original_zero_health_callback
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -251,7 +287,33 @@ test = {
           2
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
+        },
+        {
+          'code': r"""
+          >>> # Testing HungryAnt chooses a random bee in its Place, and that it reduces that bee's health to 0.
+          >>> hungry = HungryAnt()
+          >>> HungryAnt.chewing_turns = 0
+          >>> place = gamestate.places["tunnel_0_0"]
+          >>> place.add_insect(hungry)
+          >>> first_bee_chosen_count = 0
+          >>> for _ in range(1000):
+          ...     place.add_insect(Bee(1)) # Add a bee with 1 health to place
+          ...     place.add_insect(Bee(2)) # Add a second bee with 2 health to place
+          ...     hungry.action(gamestate) # Eat one of the bees randomly
+          ...     assert len(place.bees) == 1, "A bee was not eaten! Make sure you are reducing the bee's health by the correct amount."
+          ...     if place.bees[0].health == 2:
+          ...             first_bee_chosen_count += 1
+          ...     place.remove_insect(place.bees[0])
+          >>> first_bee_chosen_count < 1000 # If bees are chosen randomly, HungryAnt should eat the first bee less than 1000 times with high probability
+          True
+          >>> first_bee_chosen_count > 0 # If bees are chosen randomly, HungryAnt should eat the first bee at least once with high probability
+          True
+          """,
+          'hidden': False,
+          'locked': False,
+          'multiline': False
         }
       ],
       'scored': True,
@@ -259,7 +321,7 @@ test = {
       >>> from ants import *
       >>> beehive, layout = Hive(AssaultPlan()), dry_layout
       >>> dimensions = (1, 9)
-      >>> gamestate = GameState(None, beehive, ant_types(), layout, dimensions)
+      >>> gamestate = GameState(beehive, ant_types(), layout, dimensions)
       >>> #
       """,
       'teardown': '',
@@ -274,7 +336,8 @@ test = {
           True
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         }
       ],
       'scored': True,

@@ -1,74 +1,19 @@
 test = {
   'name': 'Problem 8',
-  'points': 3,
+  'points': 0,
   'suites': [
     {
       'cases': [
         {
-          'answer': 'c9e4559526ed96dcae3a8a67e48f2539',
+          'answer': 'c1637d7df9f040dc0b1cd3b7d43616a9',
           'choices': [
-            'The Ant instance that is in the same place as itself',
-            'The Ant instance in the place closest to its own place',
-            'A random Ant instance in the gamestate',
-            'All the Ant instances in the gamestate'
+            'No, I will go do them right now',
+            'Yes!'
           ],
           'hidden': False,
           'locked': True,
-          'question': 'Which Ant does a BodyguardAnt guard?'
-        },
-        {
-          'answer': '22a2c7eb1d7adee7ea4eb970d3cc09e9',
-          'choices': [
-            'By protecting the ant from Bees and allowing it to perform its original action',
-            'By attacking Bees that try to attack it',
-            "By increasing the ant's health",
-            'By allowing Bees to pass without attacking'
-          ],
-          'hidden': False,
-          'locked': True,
-          'question': 'How does a BodyguardAnt guard its ant?'
-        },
-        {
-          'answer': 'e5029f38ae9a6b212c532cf07d08d994',
-          'choices': [
-            "In the BodyguardAnt's contained_ant instance attribute",
-            "In the BodyguardAnt's contained_ant class attribute",
-            "In its place's ant instance attribute",
-            "Nowhere, a BodyguardAnt has no knowledge of the ant that it's protecting"
-          ],
-          'hidden': False,
-          'locked': True,
-          'question': 'Where is the ant contained by a BodyguardAnt stored?'
-        },
-        {
-          'answer': '7a81f10493cb9dd2a778afa061e3edd5',
-          'choices': [
-            r"""
-            When exactly one of the Ant instances is a container and the
-            container ant does not already contain another ant
-            """,
-            'When exactly one of the Ant instances is a container',
-            'When both Ant instances are containers',
-            'There can never be two Ant instances in the same place'
-          ],
-          'hidden': False,
-          'locked': True,
-          'question': 'When can a second Ant be added to a place that already contains an Ant?'
-        },
-        {
-          'answer': '15da5c3b3f44c437c3da5155a6d0c267',
-          'choices': [
-            'The container Ant',
-            'The Ant being contained',
-            'A list containing both Ants',
-            'Whichever Ant was placed there first'
-          ],
-          'hidden': False,
-          'locked': True,
-          'question': r"""
-          If two Ants occupy the same Place, what is stored in that place's ant
-          instance attribute?
-          """
+          'multiline': False,
+          'question': 'Did you complete all the unlocking tests for each subpart?'
         }
       ],
       'scored': False,
@@ -78,20 +23,6 @@ test = {
       'cases': [
         {
           'code': r"""
-          >>> # Testing BodyguardAnt parameters
-          >>> bodyguard = BodyguardAnt()
-          >>> BodyguardAnt.food_cost
-          c9452203eb0b0f0bd2454586a6c2fc5c
-          # locked
-          >>> bodyguard.health
-          20d533d3e06345c8bd7072212867f2d1
-          # locked
-          """,
-          'hidden': False,
-          'locked': True
-        },
-        {
-          'code': r"""
           >>> # Abstraction tests
           >>> original = ContainerAnt.__init__
           >>> ContainerAnt.__init__ = lambda self, health: print("init") #If this errors, you are not calling the parent constructor correctly.
@@ -99,11 +30,12 @@ test = {
           init
           >>> ContainerAnt.__init__ = original
           >>> bodyguard = BodyguardAnt()
-          >>> hasattr(bodyguard, 'contained_ant')
+          >>> hasattr(bodyguard, 'ant_contained')
           True
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         }
       ],
       'scored': True,
@@ -121,7 +53,8 @@ test = {
           >>> bodyguard.action(gamestate) # Action without contained ant should not error
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -138,7 +71,8 @@ test = {
           1
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -155,7 +89,8 @@ test = {
           1
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -173,7 +108,8 @@ test = {
           True
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -191,7 +127,8 @@ test = {
           True
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -205,11 +142,12 @@ test = {
           >>> place.add_insect(test_ant)
           >>> place.add_insect(bodyguard)
           >>> place.ant.action(gamestate)
-          >>> place.ant.contained_ant.health
+          >>> place.ant.ant_contained.health
           9001
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -223,10 +161,11 @@ test = {
           >>> place.add_insect(second_ant)
           Traceback (most recent call last):
           ...
-          AssertionError: Two ants in tunnel_0_0
+          AssertionError: Too many ants in tunnel_0_0
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -238,10 +177,11 @@ test = {
           >>> place.add_insect(bodyguard2)
           Traceback (most recent call last):
           ...
-          AssertionError: Two ants in tunnel_0_0
+          AssertionError: Too many ants in tunnel_0_0
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
@@ -272,13 +212,14 @@ test = {
           True
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         },
         {
           'code': r"""
           >>> # test proper call to death callback
-          >>> original_death_callback = Insect.death_callback
-          >>> Insect.death_callback = lambda x: print("insect died")
+          >>> original_zero_health_callback = Insect.zero_health_callback
+          >>> Insect.zero_health_callback = lambda x: print("insect died")
           >>> place = gamestate.places["tunnel_0_0"]
           >>> bee = Bee(3)
           >>> bodyguard = BodyguardAnt()
@@ -291,17 +232,18 @@ test = {
           insect died
           >>> bee.action(gamestate) # if you fail this test you probably didn't correctly call Ant.reduce_health or Insect.reduce_health
           insect died
-          >>> Insect.death_callback = original_death_callback
+          >>> Insect.zero_health_callback = original_zero_health_callback
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         }
       ],
       'scored': True,
       'setup': r"""
       >>> from ants import *
       >>> beehive, layout = Hive(AssaultPlan()), dry_layout
-      >>> gamestate = GameState(None, beehive, ant_types(), layout, (1, 9))
+      >>> gamestate = GameState(beehive, ant_types(), layout, (1, 9))
       >>> #
       """,
       'teardown': '',
@@ -316,7 +258,8 @@ test = {
           True
           """,
           'hidden': False,
-          'locked': False
+          'locked': False,
+          'multiline': False
         }
       ],
       'scored': True,
