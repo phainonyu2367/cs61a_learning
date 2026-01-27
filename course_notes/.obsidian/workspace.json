@@ -49,12 +49,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "conclution of lectures/Lecture 24.Data Examples.md",
+                "file": "conclution of lectures/Lecuture 27.Scheme.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lecture 24.Data Examples"
+              "title": "Lecuture 27.Scheme"
             }
           }
         ],
@@ -208,8 +208,15 @@
   },
   "active": "21f46a89f152a2cc",
   "lastOpenFiles": [
-    "projects_log/ideas.md",
+    "Pasted image 20260126115650.png",
+    "Pasted image 20260126112931.png",
+    "Pasted image 20260126112317.png",
+    "Pasted image 20260126111819.png",
+    "Pasted image 20260126111746.png",
+    "Pasted image 20260126111522.png",
     "conclution of lectures/Lecture 24.Data Examples.md",
+    "conclution of lectures/Lecuture 27.Scheme.md",
+    "projects_log/ideas.md",
     "projects_log/project3_ants/Decscription.md",
     "projects_log/project3_ants",
     "conclution of lectures/Lecture 23.Decomposition.md",
@@ -222,12 +229,7 @@
     "conclution of lectures/Lecture 20.Representation.pdf",
     "conclution of lectures/Lecture 21.Composition.pdf",
     "conclution of lectures/Lecture 21.Composition.md",
-    "Pasted image 20260122104247.png",
-    "Pasted image 20260122092341.png",
     "conclution of lectures/Lecture 20. Representation.md",
-    "Pasted image 20260122085927.png",
-    "Pasted image 20260122085906.png",
-    "Pasted image 20260122084925.png",
     "conclution of lectures/Lecture 18.Object-Oriented-Programming.pdf",
     "conclution of lectures/Lecture19.inheritence.pdf",
     "conclution of lectures/Lecture19. inheritence.md",
@@ -251,8 +253,6 @@
     "conclution of lectures/Lecture 3.control.md",
     "conclution of lectures/Lecture7 Function Example.md",
     "conclution of lectures/Lecture 2.Function.md",
-    "text_book_tutorial/l1 Chap1/1.3   Defining New Functions.md",
-    "text_book_tutorial/l1 Chap1/1.2 Elements of Programming.md",
-    "projects_log/project_1_log.md"
+    "text_book_tutorial/l1 Chap1/1.3   Defining New Functions.md"
   ]
 }
