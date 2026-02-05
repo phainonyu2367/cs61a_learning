@@ -118,19 +118,15 @@ def reverse_other(t):
     Tree(1, [Tree(8, [Tree(3, [Tree(5), Tree(4)]), Tree(6, [Tree(7)])]), Tree(2)])
     """
     "*** YOUR CODE HERE ***"
-    if t.is_leaf():
-        return
-    labels = []
-    for branch in t.branches:
-        labels.append(branch.label)
-    index = len(labels) - 1
-    for branch in t.branches:
-        branch.label = labels[index]
-        index -= 1
-    for branch in t.branches:
-        if not branch.is_leaf():
-            for b in branch.branches:
-                reverse_other(b)
+    def helper(t=t, layer=0):
+        if t.is_leaf():
+            return
+        if layer%2==0:
+            for idx, label in zip(range(len(t.branches)), reversed([bi.label for bi in t.branches[:]])):
+                t.branches[idx].label = label
+        for b in t.branches:
+            helper(b, layer+1)
+    return helper()
 
 
 
