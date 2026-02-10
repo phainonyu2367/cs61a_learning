@@ -49,10 +49,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "conclution of lectures/Lecuture 27.Scheme.pdf"
+                "file": "conclution of lectures/Lecture 30.Interperters.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "Lecuture 27.Scheme"
+              "title": "Lecture 30.Interperters"
             }
           }
         ],
@@ -204,10 +204,11 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "7fdad45b20fa6ecc",
+  "active": "21f46a89f152a2cc",
   "lastOpenFiles": [
-    "conclution of lectures/Lecture 31.Declarative Programming.md",
     "conclution of lectures/Lecture 31.Declarative Programming.pdf",
+    "conclution of lectures/Lecuture 27.Scheme.pdf",
+    "conclution of lectures/Lecture 31.Declarative Programming.md",
     "conclution of lectures/Lecture 30.Interperters.md",
     "conclution of lectures/Lecture 30.Interperters.pdf",
     "conclution of lectures/Lecture 30.Interpreters.pdf",
@@ -221,7 +222,6 @@
     "Pasted image 20260208161521.png",
     "Pasted image 20260208161059.png",
     "Pasted image 20260208160722.png",
-    "conclution of lectures/Lecuture 27.Scheme.pdf",
     "未命名",
     "conclution of lectures/Lecture 29.Calculators.pdf",
     "conclution of lectures/Lecture 28.Exceptions.md",
