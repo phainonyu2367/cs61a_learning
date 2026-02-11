@@ -49,12 +49,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "conclution of lectures/Lecture 33.Aggregation.md",
+                "file": "conclution of lectures/Lecture 34.Database.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lecture 33.Aggregation"
+              "title": "Lecture 34.Database"
             }
           }
         ],
@@ -208,9 +208,13 @@
   },
   "active": "21f46a89f152a2cc",
   "lastOpenFiles": [
-    "conclution of lectures/Lecture 32.Tables.md",
-    "conclution of lectures/Lecture 32.Tables.pdf",
     "conclution of lectures/Lecture 33.Aggregation.md",
+    "conclution of lectures/Lecture 34.Database.md",
+    "conclution of lectures/Lecture 33.Aggregation.pdf",
+    "Pasted image 20260210121858.png",
+    "Pasted image 20260210114656.png",
+    "conclution of lectures/Lecture 32.Tables.pdf",
+    "conclution of lectures/Lecture 32.Tables.md",
     "Pasted image 20260210103146.png",
     "Pasted image 20260210102938.png",
     "Pasted image 20260210102418.png",
@@ -225,8 +229,6 @@
     "conclution of lectures/Lecture 30.Interperters.md",
     "conclution of lectures/Lecture 30.Interpreters.pdf",
     "Pasted image 20260208164841.png",
-    "Pasted image 20260208163859.png",
-    "Pasted image 20260208162719.png",
     "未命名",
     "conclution of lectures/Lecture 29.Calculators.pdf",
     "conclution of lectures/Lecture 28.Exceptions.md",
@@ -238,7 +240,6 @@
     "projects_log/project3_ants/Decscription.md",
     "projects_log/project3_ants",
     "conclution of lectures/Lecture 23.Decomposition.md",
-    "conclution of lectures/Lecture 23.Decomposition.pdf",
     "conclution of lectures/Lecture 21.Composition.md",
     "conclution of lectures/Lecture 20. Representation.md",
     "conclution of lectures/Lecture19. inheritence.md",
