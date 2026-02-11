@@ -47,14 +47,12 @@
             "id": "21f46a89f152a2cc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "conclution of lectures/Lecture 34.Database.md",
-                "mode": "source",
-                "source": false
+                "file": "conclution of lectures/Lecture 32.Tables.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Lecture 34.Database"
+              "icon": "lucide-file-text",
+              "title": "Lecture 32.Tables"
             }
           }
         ],
@@ -206,8 +204,15 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "21f46a89f152a2cc",
+  "active": "7fdad45b20fa6ecc",
   "lastOpenFiles": [
+    "conclution of lectures/Lecture 34.Database.pdf",
+    "Pasted image 20260211094903.png",
+    "Pasted image 20260211094001.png",
+    "Pasted image 20260211093228.png",
+    "Pasted image 20260211092923.png",
+    "Pasted image 20260211091946.png",
+    "Pasted image 20260211091927.png",
     "conclution of lectures/Lecture 33.Aggregation.md",
     "conclution of lectures/Lecture 34.Database.md",
     "conclution of lectures/Lecture 33.Aggregation.pdf",
@@ -217,18 +222,12 @@
     "conclution of lectures/Lecture 32.Tables.md",
     "Pasted image 20260210103146.png",
     "Pasted image 20260210102938.png",
-    "Pasted image 20260210102418.png",
-    "Pasted image 20260210102142.png",
-    "Pasted image 20260210102013.png",
-    "Pasted image 20260210101506.png",
-    "Pasted image 20260210101407.png",
     "conclution of lectures/Lecture 30.Interperters.pdf",
     "conclution of lectures/Lecture 31.Declarative Programming.pdf",
     "conclution of lectures/Lecuture 27.Scheme.pdf",
     "conclution of lectures/Lecture 31.Declarative Programming.md",
     "conclution of lectures/Lecture 30.Interperters.md",
     "conclution of lectures/Lecture 30.Interpreters.pdf",
-    "Pasted image 20260208164841.png",
     "未命名",
     "conclution of lectures/Lecture 29.Calculators.pdf",
     "conclution of lectures/Lecture 28.Exceptions.md",
@@ -252,7 +251,6 @@
     "projects_log/project2 cats/descriptions_of_objects.md",
     "conclution of lectures/Lecture12 Trees.md",
     "conclution of lectures/Lecture11 Data Abstraction.md",
-    "conclution of lectures/Lecture10 containers.md",
-    "conclution of lectures/Lecture9 tree recursion.md"
+    "conclution of lectures/Lecture10 containers.md"
   ]
 }
