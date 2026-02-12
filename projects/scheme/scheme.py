@@ -75,7 +75,12 @@ def eval_all(expressions, env):
     2
     """
     # BEGIN PROBLEM 7
-    return scheme_eval(expressions.first, env) # replace this with lines of your own code
+    current = expressions
+    ans = None
+    while not current is nil:
+        ans = scheme_eval(current.first, env)
+        current = current.rest
+    return ans
     # END PROBLEM 7
 
 ################
@@ -130,6 +135,12 @@ class Frame(object):
             raise SchemeError('Incorrect number of arguments to function call')
         # BEGIN PROBLEM 10
         "*** YOUR CODE HERE ***"
+        child = Frame(self)
+        formal, val = formals, vals
+        while not formal is nil and not vals is nil:
+            child.define(formal.first, val.first)
+            formal, val = formal.rest, val.rest
+        return child
         # END PROBLEM 10
 
 ##############
@@ -199,6 +210,7 @@ class LambdaProcedure(Procedure):
         of values, for a lexically-scoped call evaluated in environment ENV."""
         # BEGIN PROBLEM 11
         "*** YOUR CODE HERE ***"
+        return self.env.make_child_frame(self.formals, args)
         # END PROBLEM 11
 
     def __str__(self):
@@ -263,6 +275,9 @@ def do_define_form(expressions, env):
     elif isinstance(target, Pair) and scheme_symbolp(target.first):
         # BEGIN PROBLEM 9
         "*** YOUR CODE HERE ***"
+        lamb = do_lambda_form(Pair(target.rest, expressions.rest), env)
+        env.define(target.first, lamb)
+        return target.first
         # END PROBLEM 9
     else:
         bad_target = target.first if isinstance(target, Pair) else target
@@ -278,6 +293,7 @@ def do_quote_form(expressions, env):
     validate_form(expressions, 1, 1)
     # BEGIN PROBLEM 6
     "*** YOUR CODE HERE ***"
+    return expressions.first
     # END PROBLEM 6
 
 def do_begin_form(expressions, env):
@@ -304,6 +320,7 @@ def do_lambda_form(expressions, env):
     validate_formals(formals)
     # BEGIN PROBLEM 8
     "*** YOUR CODE HERE ***"
+    return LambdaProcedure(formals, expressions.rest, env)
     # END PROBLEM 8
 
 def do_if_form(expressions, env):
@@ -336,6 +353,17 @@ def do_and_form(expressions, env):
     """
     # BEGIN PROBLEM 12
     "*** YOUR CODE HERE ***"
+    cur = expressions
+    ans = cur
+    if cur is nil:
+        return True
+    else:
+        while not cur is nil:
+            ans = scheme_eval(cur.first, env)
+            if is_false_primitive(ans):
+                return False
+            cur = cur.rest
+        return ans
     # END PROBLEM 12
 
 def do_or_form(expressions, env):
@@ -353,6 +381,13 @@ def do_or_form(expressions, env):
     """
     # BEGIN PROBLEM 12
     "*** YOUR CODE HERE ***"
+    cur = expressions
+    while not cur is nil:
+        ans = scheme_eval(cur.first, env)
+        if is_true_primitive(ans):
+            return ans
+        cur = cur.rest
+    return False
     # END PROBLEM 12
 
 def do_cond_form(expressions, env):
@@ -373,6 +408,10 @@ def do_cond_form(expressions, env):
         if is_true_primitive(test):
             # BEGIN PROBLEM 13
             "*** YOUR CODE HERE ***"
+            if clause.rest is nil:
+                return test
+            else:
+                return eval_all(clause.rest, env)
             # END PROBLEM 13
         expressions = expressions.rest
 
@@ -397,6 +436,15 @@ def make_let_frame(bindings, env):
     names, values = nil, nil
     # BEGIN PROBLEM 14
     "*** YOUR CODE HERE ***"
+    current = bindings
+    while not current is nil:
+        validate_form(current.first, 2, 2)
+        name = current.first.first
+        names = Pair(name, names)
+        value = scheme_eval(current.first.rest.first, env)
+        values = Pair(value, values)
+        current = current.rest
+    validate_formals(names)
     # END PROBLEM 14
     return env.make_child_frame(names, values)
 
